@@ -10,8 +10,17 @@ A SwiftUI iOS application demonstrating MetaKeep wallet integration with Solana 
 - Solana transaction signing using MetaKeep SDK
 - Transaction submission to Solana devnet
 
+## Setup the project 
 
-## Configure custom URL scheme
+1. Clone the project 
+
+```
+git clone https://github.com/meet-metakeep/iOS-SVM-App
+cd iOS-SVM-App
+```
+
+
+2. Configure custom URL scheme
 MetaKeep uses a custom URL scheme to send data back to your app after the user's operation.
 
 Navigate to the Info tab of your app target settings in XCode. In the URL Types section, click the ＋ button to add a new URL. Enter the following values:
