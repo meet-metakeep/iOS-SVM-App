@@ -6,27 +6,17 @@
 //
 
 import SwiftUI
-import SwiftData
+import MetaKeep
 
 @main
 struct iOS_SVM_AppApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    // Initialize MetaKeep SDK
+    // TODO: Replace with your own MetaKeep App ID
+    static let sdk = MetaKeep(appId: "YOUR_METAKEEP_APP_ID", appContext: AppContext())
 
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
     }
 }
